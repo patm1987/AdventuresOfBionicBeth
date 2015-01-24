@@ -7,12 +7,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "bg/background0.h"
+#include "palette/palette.h"
+
+// values are in the range 0 - 31
+// ie: 0x00 - 0x1F
+palette_t aPalettes [] = {
+	RGB5(0,0x1F,0x00)
+};
+
 //---------------------------------------------------------------------------------
 // Program entry point
 //---------------------------------------------------------------------------------
 int main(void) {
 //---------------------------------------------------------------------------------
-
 
 	// the vblank interrupt must be enabled for VBlankIntrWait() to work
 	// since the default dispatcher handles the bios flags no vblank handler
@@ -20,14 +28,8 @@ int main(void) {
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 
-	consoleDemoInit();
-
-	// ansi escape sequence to set print co-ordinates
-	// /x1b[line;columnH
-	iprintf("\x1b[10;0H"
-		"Adventures of Bionic Beth\n"
-		"Attack of the\n"
-		"Haberdashasauruses!\n");
+	BG0SetMode();
+	BG0LoadPalettes(aPalettes, sizeof(aPalettes));
 
 	while (1) {
 		VBlankIntrWait();
