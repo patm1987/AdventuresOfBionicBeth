@@ -4,8 +4,8 @@
 #include <gba_dma.h>
 #include <gba_video.h>
 
-void BG0SetMode() {
-	SetMode(MODE_0 | BG0_ON);
+u16 BG0GetMode() {
+	return MODE_0 | BG0_ON;
 }
 
 void BG0LoadPalettes(palette_t* paPalettes, u32 count) {

@@ -9,6 +9,7 @@
 
 #include "bg/background0.h"
 #include "palette/palette.h"
+#include "sprite/sprite.h"
 
 // values are in the range 0 - 31
 // ie: 0x00 - 0x1F
@@ -28,7 +29,8 @@ int main(void) {
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 
-	BG0SetMode();
+	SetMode(BG0GetMode() | SPGetMode());
+	
 	BG0LoadPalettes(aPalettes, sizeof(aPalettes));
 
 	while (1) {
