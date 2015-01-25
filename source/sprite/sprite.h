@@ -4,6 +4,9 @@
 
 #include <gba_types.h>
 
+#include "palette/palette.h"
+
 u16 SPGetMode();
+void SPLoadPalettes(palette_t* paPalettes, u32 count);
 
 #endif//__SPRITE_H_
