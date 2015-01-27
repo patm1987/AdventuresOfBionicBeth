@@ -16,11 +16,11 @@
 
 // values are in the range 0 - 31
 // ie: 0x00 - 0x1F
-palette_t aBackgroundPalette [] = {
+const palette_t aBackgroundPalette [] = {
 	{{RGB5(0,0x1F,0x00)}}
 };
 
-palette_t aCharacterPalette [] = {
+const palette_t aCharacterPalette [] = {
 	{{
 		RGB5(0x00,0x00,0x00),
 		RGB5(0x17,0x1F,0x00),
@@ -32,7 +32,7 @@ palette_t aCharacterPalette [] = {
 	}}
 };
 
-basic_character_t aBethSprite[] = {
+const basic_character_t aBethSprite[] = {
 	{{
 		0x00,0x00,0x00,0x00,
 		0x00,0x11,0x22,0x00,

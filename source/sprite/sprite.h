@@ -7,6 +7,6 @@
 #include "palette/palette.h"
 
 u16 SPGetMode();
-void SPLoadPalettes(palette_t* paPalettes, u32 count);
+void SPLoadPalettes(const palette_t* paPalettes, u32 count);
 
 #endif//__SPRITE_H_
